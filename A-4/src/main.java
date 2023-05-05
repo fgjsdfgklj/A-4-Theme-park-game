@@ -4,13 +4,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class App {
+public class main {
     private JFrame frame;
     private JLabel backgroundOne;
     private ImageIcon imageIcon;
     private Image image;
 
-    public App() {
+    public main() {
 
         // sizes and sets up image for backgroundOne Label
         imageIcon = new ImageIcon("theme park background(1).png");
@@ -32,7 +32,7 @@ public class App {
     }
 
     public static void main(String[] args) throws Exception {
-        new App();
+        new main();
 
     }
 }
