@@ -6,7 +6,7 @@ public class PointsLabel extends JLabel {
     PointsLabel(){
         //sets pointsLabel to points
         this.setText(i);
-this.setLocation(500,500);
+this.setLocation(1000,200);
 this.setSize(100,100);
 
     }
