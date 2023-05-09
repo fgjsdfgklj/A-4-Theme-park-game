@@ -10,9 +10,11 @@ public class Balloon1 extends JLabel {
     private ImageIcon imageIcon;
     private ImageIcon imageIcon2;
     private ImageIcon imageIcon3;
+    private ImageIcon imageIcon4;
     private Image image;
     private Image image2;
     private Image image3;
+    private Image image4;
     private int random;
     private int value = 1;
 
@@ -29,6 +31,10 @@ public class Balloon1 extends JLabel {
         imageIcon3 = new ImageIcon("purpleBalloon.png");
         image3 = imageIcon3.getImage();
         imageIcon3 = new ImageIcon(image3.getScaledInstance(100, 110, java.awt.Image.SCALE_SMOOTH));
+        // sizes and sets up image for deathBalloon Label
+        imageIcon4 = new ImageIcon("deathBalloon.png");
+        image4 = imageIcon4.getImage();
+        imageIcon4 = new ImageIcon(image4.getScaledInstance(100, 110, java.awt.Image.SCALE_SMOOTH));
         // setting Balloon label
         this.setIcon(imageIcon);
         this.setLocation(balloonLocationX, balloonLocationY);
@@ -36,7 +42,7 @@ public class Balloon1 extends JLabel {
         // checking if its clicked
         this.addMouseListener(new MouseListener() {
             public void mouseClicked(MouseEvent e) {
-                PointsLabel.points+= value;
+                PointsLabel.points += value;
                 System.out.println(PointsLabel.points);
                 // what!??!?!
                 // Points.updateText();
@@ -73,7 +79,8 @@ public class Balloon1 extends JLabel {
         balloonLocationX = (int) (Math.random() * ((900 - 250) + 1) + 250);
         balloonLocationY = (int) (Math.random() * ((800 - 100) + 1) + 100);
         this.setLocation(balloonLocationX, balloonLocationY);
-        //gets a random number and if its a certain size it changes the image of the Balloon
+        // gets a random number and if its a certain size it changes the image of the
+        // Balloon
         random = (int) (Math.random() * 100);
         if (random <= 70) {
             this.setIcon(imageIcon);
@@ -84,6 +91,10 @@ public class Balloon1 extends JLabel {
         } else if (random > 85 && random < 90) {
             this.setIcon(imageIcon3);
             value = 5;
+        } else {
+            this.setIcon(imageIcon4);
+            value = -10;
+            //timer();
         }
     }
 }
