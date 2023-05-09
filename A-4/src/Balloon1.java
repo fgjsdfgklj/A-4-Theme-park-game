@@ -14,6 +14,7 @@ public class Balloon1 extends JLabel {
     private Image image2;
     private Image image3;
     private int random;
+    private int value = 1;
 
     Balloon1() {
         // sizes and sets up image for redBalloon Label
@@ -35,7 +36,7 @@ public class Balloon1 extends JLabel {
         // checking if its clicked
         this.addMouseListener(new MouseListener() {
             public void mouseClicked(MouseEvent e) {
-                PointsLabel.points++;
+                PointsLabel.points+= value;
                 System.out.println(PointsLabel.points);
                 // what!??!?!
                 // Points.updateText();
@@ -76,10 +77,13 @@ public class Balloon1 extends JLabel {
         random = (int) (Math.random() * 100);
         if (random <= 70) {
             this.setIcon(imageIcon);
+            value = 1;
         } else if (random > 70 && random < 85) {
             this.setIcon(imageIcon2);
+            value = 3;
         } else if (random > 85 && random < 90) {
             this.setIcon(imageIcon3);
+            value = 5;
         }
     }
 }
