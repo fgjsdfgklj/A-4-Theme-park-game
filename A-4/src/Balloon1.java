@@ -7,6 +7,7 @@ import java.util.TimerTask;
 
 public class Balloon1 extends JLabel {
 
+    public static Component pointlabel;
     private int balloonLocationX;
     private int balloonLocationY;
     private ImageIcon imageIcon;
@@ -21,6 +22,8 @@ public class Balloon1 extends JLabel {
     private int value = 1;
 
     Balloon1() {
+
+        PointsLabel pointlabel = new PointsLabel();
         // sizes and sets up image for redBalloon Label
         imageIcon = new ImageIcon("redBalloon.png");
         image = imageIcon.getImage();
@@ -44,10 +47,9 @@ public class Balloon1 extends JLabel {
         // checking if its clicked
         this.addMouseListener(new MouseListener() {
             public void mouseClicked(MouseEvent e) {
-                PointsLabel.points += value;
-                System.out.println(PointsLabel.points);
-                // what!??!?!
-                // Points.updateText();
+                pointlabel.points += value;
+                System.out.println(pointlabel.points);
+                pointlabel.updateText();
                 addBalloon();
 
             }
@@ -82,7 +84,7 @@ public class Balloon1 extends JLabel {
         balloonLocationY = (int) (Math.random() * ((800 - 100) + 1) + 100);
         this.setLocation(balloonLocationX, balloonLocationY);
         // gets a random number and if its a certain size it changes the image of the
-        // Balloon
+        // balloon and its also sets the value of the balloon based on the image set
         random = (int) (Math.random() * 100);
         if (random <= 70) {
             this.setIcon(imageIcon);
@@ -96,6 +98,7 @@ public class Balloon1 extends JLabel {
         } else if (random > 90 && random <= 100) {
             this.setIcon(imageIcon4);
             value = -10;
+            //timer is set for 3 seconds and after its done it deletes the death balloon and replaces it with a different one
             Timer timer = new Timer();
             TimerTask task = new TimerTask() {
                 @Override

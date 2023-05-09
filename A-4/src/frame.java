@@ -4,19 +4,21 @@ import java.awt.*;
 public class frame extends JFrame {
 
         frame() {
-                // adds frame and its values
+                // adds frame, its values and objects
                 GameLabel backgroundOne = new GameLabel();
                 Balloon1 label1 = new Balloon1();
                 Balloon2 label2 = new Balloon2();
                 Balloon3 label3 = new Balloon3();
-                PointsLabel points = new PointsLabel();
+                sign sign1 = new sign();
+                PointsLabel pointlabel = new PointsLabel();
 
                 this.setSize(1280, 1024);
                 this.setResizable(false);
                 this.add(label1);
                 this.add(label2);
                 this.add(label3);
-                this.add(points);
+                this.add(pointlabel);
+                this.add(sign1);
                 // add backgrounds last
                 this.add(backgroundOne);
 
@@ -33,7 +35,7 @@ public class frame extends JFrame {
                 label1.setCursor(crosshair);
                 label2.setCursor(crosshair);
                 label3.setCursor(crosshair);
-                
+                sign1.setCursor(crosshair);
 
         }
 
