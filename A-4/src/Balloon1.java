@@ -14,7 +14,7 @@ public class Balloon1 extends JLabel {
 
     Balloon1() {
         // sizes and sets up image for Balloon Label
-        imageIcon = new ImageIcon("crosshair.png");
+        imageIcon = new ImageIcon("redBalloon.png");
         image = imageIcon.getImage();
         imageIcon = new ImageIcon(image.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH));
         //setting Balloon label
