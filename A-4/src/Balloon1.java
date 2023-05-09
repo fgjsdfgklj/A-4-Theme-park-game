@@ -103,11 +103,9 @@ public class Balloon1 extends JLabel {
                     addBalloon();
                 }
             };
-            timer.schedule(task, 5000);
-        
-            
+            timer.schedule(task, 3000);
+
         }
-        
 
     }
 }
