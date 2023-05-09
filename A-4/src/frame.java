@@ -17,12 +17,12 @@ public class frame extends JFrame {
                 this.add(label1);
                 this.add(label2);
                 this.add(label3);
-                this.add(pointlabel);
+                this.add(Balloon1.pointlabel);
                 this.add(sign1);
-                // add backgrounds last
+                // add backgrounds last so everything is above it
                 this.add(backgroundOne);
 
-                this.setTitle("Aimlabs");
+                this.setTitle("Balloon pop");
                 this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
                 this.setVisible(true);
