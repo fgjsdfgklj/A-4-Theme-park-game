@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Balloon1 extends JLabel {
 
@@ -85,16 +87,27 @@ public class Balloon1 extends JLabel {
         if (random <= 70) {
             this.setIcon(imageIcon);
             value = 1;
-        } else if (random > 70 && random < 85) {
+        } else if (random > 70 && random <= 85) {
             this.setIcon(imageIcon2);
             value = 3;
-        } else if (random > 85 && random < 90) {
+        } else if (random > 85 && random <= 90) {
             this.setIcon(imageIcon3);
             value = 5;
-        } else {
+        } else if (random > 90 && random <= 100) {
             this.setIcon(imageIcon4);
             value = -10;
-            //timer();
+            Timer timer = new Timer();
+            TimerTask task = new TimerTask() {
+                @Override
+                public void run() {
+                    addBalloon();
+                }
+            };
+            timer.schedule(task, 5000);
+        
+            
         }
+        
+
     }
 }
