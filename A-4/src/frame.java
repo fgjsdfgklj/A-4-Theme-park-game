@@ -17,7 +17,7 @@ public class frame extends JFrame {
                 this.add(label1);
                 this.add(label2);
                 this.add(label3);
-                this.add(Balloon1.pointlabel);
+                this.add(pointlabel);
                 this.add(sign1);
                 // add backgrounds last so everything is above it
                 this.add(backgroundOne);
