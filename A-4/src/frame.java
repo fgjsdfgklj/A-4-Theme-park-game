@@ -7,8 +7,8 @@ public class frame extends JFrame {
                 // adds frame, its values and objects
                 GameLabel backgroundOne = new GameLabel();
                 Balloon1 label1 = new Balloon1();
-                Balloon2 label2 = new Balloon2();
-                Balloon3 label3 = new Balloon3();
+                Balloon1 label2 = new Balloon1();
+                Balloon1 label3 = new Balloon1();
                 sign sign1 = new sign();
 
                 this.setSize(1280, 1024);

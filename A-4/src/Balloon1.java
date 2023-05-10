@@ -126,12 +126,14 @@ public class Balloon1 extends JLabel {
 
     public void playMusic() {
         try {
-            // gets the audio file and plays it
+            // gets the audio file and plays it and if its the deathBalloon it plays the
+            // buzz noise instead
             if (random > 90 && random <= 100) {
                 AudioInputStream audioInput = AudioSystem.getAudioInputStream(new File("wrong-47985.wav"));
                 Clip clip = AudioSystem.getClip();
                 clip.open(audioInput);
                 clip.start();
+                // normal pop noise if normal balloons are clicked
             } else {
                 AudioInputStream audioInput = AudioSystem.getAudioInputStream(new File("pop2-84862.wav"));
                 Clip clip = AudioSystem.getClip();
@@ -140,7 +142,7 @@ public class Balloon1 extends JLabel {
             }
 
         }
-        // ifthe file is not found it will print that it cant play the sound
+        // if the file is not found it will print that it cant play the sound
         catch (Exception e) {
 
             System.out.println("cant play sound");
