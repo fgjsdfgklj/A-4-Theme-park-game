@@ -8,7 +8,7 @@ public class PointsLabel extends JLabel {
     private String i = Integer.toString(points);
 
     PointsLabel() {
-        // sets pointsLabel to points at start
+        // sets pointsLabel to points at start and sets its location,size and color
         this.setText(i);
         this.setLocation(1100, 210);
         this.setSize(100, 100);
