@@ -11,7 +11,7 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.JOptionPane;
 
-public class Balloon1 extends JLabel {
+public class Balloon extends JLabel {
     // adding all of the variables
     public static Component pointlabel;
     private int balloonLocationX;
@@ -27,7 +27,7 @@ public class Balloon1 extends JLabel {
     private int random;
     private int value = 1;
 
-    Balloon1() {
+    Balloon() {
 
         // sizes and sets up image for redBalloon Label
         imageIcon = new ImageIcon("redBalloon.png");
