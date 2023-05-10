@@ -126,14 +126,21 @@ public class Balloon1 extends JLabel {
 
     public void playMusic() {
         try {
-
-            AudioInputStream audioInput = AudioSystem.getAudioInputStream(new File("pop2-84862.wav"));
-            Clip clip = AudioSystem.getClip();
-            clip.open(audioInput);
-            clip.start();
+            // gets the audio file and plays it
+            if (random > 90 && random <= 100) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(new File("wrong-47985.wav"));
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            } else {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(new File("pop2-84862.wav"));
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            }
 
         }
-
+        // ifthe file is not found it will print that it cant play the sound
         catch (Exception e) {
 
             System.out.println("cant play sound");
