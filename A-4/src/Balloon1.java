@@ -5,8 +5,14 @@ import java.awt.event.MouseListener;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Balloon1 extends JLabel {
+import java.io.File;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.swing.JOptionPane;
 
+public class Balloon1 extends JLabel {
+    // adding all of the variables
     public static Component pointlabel;
     private int balloonLocationX;
     private int balloonLocationY;
@@ -49,6 +55,7 @@ public class Balloon1 extends JLabel {
         this.addMouseListener(new MouseListener() {
             public void mouseClicked(MouseEvent e) {
                 Game.pointLabel.updatePoints(value);
+                playMusic();
                 addBalloon();
 
             }
@@ -58,6 +65,7 @@ public class Balloon1 extends JLabel {
             @Override
             public void mousePressed(MouseEvent e) {
                 Game.pointLabel.updatePoints(value);
+                playMusic();
                 addBalloon();
             }
 
@@ -112,6 +120,23 @@ public class Balloon1 extends JLabel {
             };
             timer.schedule(task, 3000);
 
+        }
+
+    }
+
+    public void playMusic() {
+        try {
+
+            AudioInputStream audioInput = AudioSystem.getAudioInputStream(new File("pop2-84862.wav"));
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInput);
+            clip.start();
+
+        }
+
+        catch (Exception e) {
+
+            System.out.println("cant play sound");
         }
 
     }
