@@ -23,7 +23,6 @@ public class Balloon1 extends JLabel {
 
     Balloon1() {
 
-        PointsLabel pointlabel = new PointsLabel();
         // sizes and sets up image for redBalloon Label
         imageIcon = new ImageIcon("redBalloon.png");
         image = imageIcon.getImage();
@@ -47,16 +46,15 @@ public class Balloon1 extends JLabel {
         // checking if its clicked
         this.addMouseListener(new MouseListener() {
             public void mouseClicked(MouseEvent e) {
-                pointlabel.points += value;
-                System.out.println(pointlabel.points);
-                pointlabel.updateText();
+                Game.pointLabel.updatePoints(value);
                 addBalloon();
 
             }
 
             @Override
             public void mousePressed(MouseEvent e) {
-
+                Game.pointLabel.updatePoints(value);
+                addBalloon();
             }
 
             @Override
@@ -98,7 +96,8 @@ public class Balloon1 extends JLabel {
         } else if (random > 90 && random <= 100) {
             this.setIcon(imageIcon4);
             value = -10;
-            //timer is set for 3 seconds and after its done it deletes the death balloon and replaces it with a different one
+            // timer is set for 3 seconds and after its done it deletes the death balloon
+            // and replaces it with a different one
             Timer timer = new Timer();
             TimerTask task = new TimerTask() {
                 @Override

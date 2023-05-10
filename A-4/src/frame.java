@@ -10,14 +10,13 @@ public class frame extends JFrame {
                 Balloon2 label2 = new Balloon2();
                 Balloon3 label3 = new Balloon3();
                 sign sign1 = new sign();
-                PointsLabel pointlabel = new PointsLabel();
 
                 this.setSize(1280, 1024);
                 this.setResizable(false);
                 this.add(label1);
                 this.add(label2);
                 this.add(label3);
-                this.add(pointlabel);
+                this.add(Game.pointLabel);
                 this.add(sign1);
                 // add backgrounds last so everything is above it
                 this.add(backgroundOne);

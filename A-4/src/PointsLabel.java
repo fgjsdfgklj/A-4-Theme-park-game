@@ -1,7 +1,7 @@
 import javax.swing.*;
 
 public class PointsLabel extends JLabel {
-    public static int points = 0;
+    private int points = 0;
     private String i = Integer.toString(points);
 
     PointsLabel() {
@@ -12,8 +12,10 @@ public class PointsLabel extends JLabel {
 
     }
 
-    public void updateText() {
-        this.setText("Test");
+    public void updatePoints(int p) {
+        points += p;
+        String i = Integer.toString(points);
+        this.setText(i);
 
     }
     
