@@ -43,7 +43,9 @@ public class Balloon1 extends JLabel {
         this.setIcon(imageIcon);
         this.setLocation(balloonLocationX, balloonLocationY);
         this.setSize(100, 110);
-        // checking if its clicked if so it sends the value of the balloon clicked to pointLabel to add to the counter and then calls the addBalloon method to add another balloon
+        // checking if its clicked if so it sends the value of the balloon clicked to
+        // pointLabel to add to the counter and then calls the addBalloon method to add
+        // another balloon
         this.addMouseListener(new MouseListener() {
             public void mouseClicked(MouseEvent e) {
                 Game.pointLabel.updatePoints(value);
@@ -51,6 +53,8 @@ public class Balloon1 extends JLabel {
 
             }
 
+            // checking if its pressed instead of just clicked in case the player holds down
+            // on the mouse when clicked the balloons(does the same thing as if clicked)
             @Override
             public void mousePressed(MouseEvent e) {
                 Game.pointLabel.updatePoints(value);
@@ -72,7 +76,7 @@ public class Balloon1 extends JLabel {
 
             }
         });
-        //sets Balloon at start of game to a random spot 
+        // sets Balloon at start of game to a random spot
         addBalloon();
     }
 
